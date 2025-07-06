@@ -1,10 +1,9 @@
-import "./Itemcard.css";
+import "./ItemCard.css";
 
-
-//renders each clothing item (name and img) 
+//renders each clothing item (name and img)
 function ItemCard({ item, onCardClick }) {
   const handleCardClick = () => {
-     onCardClick(item);
+    onCardClick(item);
   };
 
   return (
