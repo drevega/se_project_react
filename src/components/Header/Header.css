@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url(../vendor/fonts/);
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 32px 0 28px;
+}
+
+.header__logo {
+  height: 40px;
+  width: 89px;
+  margin-right: 24px;
+}
+
+.header__date-location {
+  margin: 0;
+  font-size: 20px;
+}
+
+.header__clothes-btn {
+  margin: 0 20px 0 auto;
+  font-size: 20px;
+  font-weight: 700; 
+  line-height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header__user-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__username {
+  margin: 0;
+  font-size: 20px;
+}
+
+.header__avatar {
+  border: 1px;
+  border-color: #00000080;
+}
+
+
+/* @media screen and (max-width: 627px) {
+
+} */
