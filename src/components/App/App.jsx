@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
+import { useEffect, useState } from "react";
+import { getWeather, filterWeatherData } from "../../utils/weatherApi";
+
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
-import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 
 //main logic controller
 function App() {
@@ -38,7 +38,9 @@ function App() {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error("Failed to fetch weather data:", error);
+      });
   }, []);
 
   return (
@@ -52,6 +54,7 @@ function App() {
         title="New garment"
         buttonText="Add garment"
         activeModal={activeModal}
+        isOpen={activeModal === "add-garment"}
         onClose={closeActiveModal}
       >
         {""}

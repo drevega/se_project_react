@@ -2,9 +2,14 @@ import { useEffect } from "react";
 import "./ModalWithForm.css";
 import close from "../../assets/close-icon.png";
 
-function ModalWithForm({ children, buttonText, title, activeModal, onClose }) {
-  const isOpen = activeModal === "add-garment";
-
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  activeModal,
+  isOpen,
+  onClose,
+}) {
   useEffect(() => {
     const handleEsc = (e) => e.key === "Escape" && onClose();
     if (isOpen) document.addEventListener("keydown", handleEsc);
@@ -21,9 +26,11 @@ function ModalWithForm({ children, buttonText, title, activeModal, onClose }) {
         <button onClick={onClose} className="modal__close">
           <img src={close} alt="close icon" />
         </button>
-        <form className="modal__form" noValidate>
+        <form className="modal__form">
           {children}
-          <button type="submit" className="modal__submit">{buttonText}</button>
+          <button type="submit" className="modal__submit">
+            {buttonText}
+          </button>
         </form>
       </div>
     </div>
