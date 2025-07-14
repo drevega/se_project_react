@@ -4,11 +4,13 @@
   gap: 20px;
   align-items: center;
 }
+
 .modal__content_type_image {
   display: flex;
   flex-direction: column;
   padding: 0;
   overflow: hidden;
+  width: 100%;
 }
 
 .modal__details {
@@ -23,6 +25,7 @@
   font-size: 20px;
   font-weight: 700;
   margin: 0;
+  display: inline-block;
 }
 
 .modal__weather {
@@ -32,9 +35,24 @@
 }
 
 .modal__image {
-  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
 }
 
+.modal__delete-button {
+  position: absolute;
+  color: #ff4d00;
+  top: 513px;
+  left: 353px;
+  background-color: transparent;
+  border: none;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.modal__delete-button:hover {
+  color: #cc0000;
+}
 
 /* @media screen and (max-width: 627px) {
   .modal__content {

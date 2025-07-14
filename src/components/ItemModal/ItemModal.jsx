@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "./ItemModal.css";
 import close from "../../assets/close-icon.png";
 
-function ItemModal({ activeModal, onClose, card }) {
+function ItemModal({ activeModal, onClose, card, onDeleteRequest }) {
   const isOpen = activeModal === "preview";
 
   useEffect(() => {
@@ -10,6 +10,7 @@ function ItemModal({ activeModal, onClose, card }) {
     if (isOpen) document.addEventListener("keydown", handleEsc);
     return () => document.removeEventListener("keydown", handleEsc);
   }, [isOpen, onClose]);
+
 
   return (
     <div
@@ -19,12 +20,18 @@ function ItemModal({ activeModal, onClose, card }) {
       <div className="modal__content modal__content_type_image">
         <button type="button" onClick={onClose} className="modal__close">
           <img src={close} alt="close icon" />
-           <div className="modal__preview"></div>
+          <div className="modal__preview"></div>
         </button>
-        <img src={card.link} alt={card.name} className="modal__image" />
+        <img src={card.link || card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__details">
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">Weather: {card.weather}</p>
+          <button
+            className="modal__delete-button"
+            onClick={() => onDeleteRequest(card)} 
+          >
+            Delete Item
+          </button>
         </div>
       </div>
     </div>

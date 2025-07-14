@@ -6,6 +6,7 @@
   height: 326px;
   border-radius: 19px;
   border: 1px solid #0000004d;
+  cursor: pointer;
 }
 
 .card__name {
@@ -33,6 +34,7 @@
   border-radius: 19px;
   margin: 0;
 }
+
 /* 
 @media screen and (max-width: 627px) {
   .card {

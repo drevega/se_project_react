@@ -1,0 +1,24 @@
+.modal_type_confirm .modal__caption {
+  text-align: center;
+  padding-top: 60px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.modal_type_confirm .modal__actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal_type_confirm .modal__confirm {
+  background: none;
+  border: none;
+  color: #ff4d00;
+  margin-top: 40px;
+}
+
+.modal_type_confirm .modal__cancel {
+  background: none;
+  border: none;
+  margin: 24px 60px;
+}

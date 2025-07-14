@@ -9,6 +9,7 @@ function ModalWithForm({
   activeModal,
   isOpen,
   onClose,
+  onSubmit
 }) {
   useEffect(() => {
     const handleEsc = (e) => e.key === "Escape" && onClose();
@@ -26,7 +27,7 @@ function ModalWithForm({
         <button onClick={onClose} className="modal__close">
           <img src={close} alt="close icon" />
         </button>
-        <form className="modal__form">
+        <form onSubmit={onSubmit} className="modal__form">
           {children}
           <button type="submit" className="modal__submit">
             {buttonText}
