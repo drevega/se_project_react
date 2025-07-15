@@ -2,13 +2,13 @@
 
 const baseUrl = "http://localhost:3001";
 
-function checkResponce(res) {
+function checkResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
 // GET all clothing items
 function getItems() {
-  return fetch(`${baseUrl}/items`).then(checkResponce);
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
 //POST new item
@@ -23,14 +23,14 @@ function addItem({ name, imageUrl, weather }) {
       imageUrl,
       weather,
     }),
-  }).then(checkResponce);
+  }).then(checkResponse);
 }
 
 //Delete an item
 function deleteItem(id) {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
-  }).then(checkResponce);
+  }).then(checkResponse);
 }
 
-export { getItems, addItem, deleteItem };
+export { getItems, addItem, deleteItem, checkResponse };
