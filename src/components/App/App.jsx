@@ -10,7 +10,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
-import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal";
 
@@ -78,7 +78,9 @@ function App() {
       .then((data) => {
         setClothingItems(data);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error("Failed to fetch clothing items:", err);
+      });
   }, []);
 
   const handleDeleteRequest = (card) => {
@@ -140,7 +142,7 @@ function App() {
           onhandleAddItemModalSubmit={handleAddItemModalSubmit}
         />
         <ItemModal
-          activeModal={activeModal}
+          isOpen={activeModal === "preview"}
           card={selectedCard}
           onClose={closeActiveModal}
           onDeleteRequest={handleDeleteRequest}

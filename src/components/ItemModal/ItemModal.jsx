@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import "./ItemModal.css";
 import close from "../../assets/close-icon.png";
 
-function ItemModal({ activeModal, onClose, card, onDeleteRequest }) {
-  const isOpen = activeModal === "preview";
+function ItemModal({ isOpen, onClose, card, onDeleteRequest }) {
 
   useEffect(() => {
     const handleEsc = (e) => e.key === "Escape" && onClose();

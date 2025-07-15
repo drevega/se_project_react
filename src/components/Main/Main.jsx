@@ -1,7 +1,7 @@
 import "./Main.css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
-import CurrentTemperatureUnitContext from "../../context/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import { useContext } from "react";
 
 //content area
@@ -12,7 +12,8 @@ function Main({ weatherData, handleCardClick, clothingItems }) {
       <WeatherCard weatherData={weatherData} />
       <section className="cards__modal-image">
         <p className="cards__text">
-          Today is {weatherData?.temp?.[currentTemperatureUnit]}&deg;{currentTemperatureUnit} / You may want to wear:
+          Today is {weatherData?.temp?.[currentTemperatureUnit]}&deg;
+          {currentTemperatureUnit} / You may want to wear:
         </p>
         <ul className="cards__list">
           {clothingItems

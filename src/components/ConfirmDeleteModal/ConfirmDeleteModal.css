@@ -1,6 +1,6 @@
 .modal_type_confirm .modal__caption {
   text-align: center;
-  padding-top: 60px;
+  padding-top: 40px;
   font-size: 20px;
   width: 100%;
 }
@@ -10,6 +10,7 @@
   flex-direction: column;
 }
 
+
 .modal_type_confirm .modal__confirm {
   background: none;
   border: none;
@@ -17,8 +18,18 @@
   margin-top: 40px;
 }
 
+.modal_type_confirm .modal__confirm:hover {
+  cursor: pointer;
+color: #850202;
+}
+
 .modal_type_confirm .modal__cancel {
   background: none;
   border: none;
   margin: 24px 60px;
+}
+
+.modal_type_confirm .modal__cancel:hover {
+  cursor: pointer;
+  color: rgb(54, 54, 54);
 }
