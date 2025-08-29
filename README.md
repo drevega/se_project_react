@@ -25,9 +25,9 @@ Formatted using Prettier.
 
 **Demos and Links** ✨
 
-- [Back-End Repo Link](https://github.com/tripleten-com/se_project_express.git)
+- [Back-End Repo Link](https://github.com/drevega/se_project_express.git)
 - [Figma Design](https://www.figma.com/design/bfVOvqlLmoKZ5lpro8WWBe/Sprint-14_-WTWR?t=WE8bZuyXqKUMPOK0-0)
-- [Demo]()
+<!-- - [Demo]() -->
 
 
 **Responsive design in process.. (will upload once ready)** 
