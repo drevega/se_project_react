@@ -3,7 +3,6 @@
   src: url(../vendor/fonts/);
 }
 
-
 .header {
   display: flex;
   align-items: center;
@@ -19,13 +18,12 @@
 .header__date-location {
   margin: 0;
   font-size: 20px;
-  
 }
 
 .header__clothes-btn {
   margin-left: 20px;
   font-size: 20px;
-  font-weight: 700; 
+  font-weight: 700;
   line-height: 24px;
   background-color: transparent;
   border: none;
@@ -52,12 +50,39 @@
   margin-left: 12px;
   border: 1px;
   border-color: #00000080;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
-
 
 .header__link {
   text-decoration: none;
 }
+
+.header__avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.header__auth-btn {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
 /* @media screen and (max-width: 627px) {
 
 } */

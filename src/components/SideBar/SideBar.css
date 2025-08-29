@@ -1,18 +1,60 @@
 .sidebar {
   display: flex;
-  justify-content: flex-start;
-  margin-left: 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
   width: 229px;
   height: 56px;
+}
+
+.sidebar__user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .sidebar__avatar {
   height: 56px;
   width: 56px;
+  align-self: center;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #00000080;
+}
+
+.sidebar__avatar-placeholder {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  border: 1px solid #00000080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .sidebar__username {
-  margin: 16px 15px;
-  align-items: center;
+  font-family: "Cabinet Grotesk", sans-serif;
   font-size: 20px;
+}
+
+.sidebar__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.sidebar__btn {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
 }

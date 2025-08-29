@@ -6,10 +6,10 @@ function ModalWithForm({
   children,
   buttonText,
   title,
-  activeModal,
   isOpen,
   onClose,
-  onSubmit
+  onSubmit,
+  isButtonDisabled,
 }) {
   useEffect(() => {
     const handleEsc = (e) => e.key === "Escape" && onClose();
@@ -29,7 +29,11 @@ function ModalWithForm({
         </button>
         <form onSubmit={onSubmit} className="modal__form">
           {children}
-          <button type="submit" className="modal__submit">
+          <button
+            type="submit"
+            className="modal__submit"
+            disabled={isButtonDisabled}
+          >
             {buttonText}
           </button>
         </form>
