@@ -82,7 +82,13 @@
   cursor: pointer;
   margin-left: 20px;
 }
+/* 
+@media screen and (max-width: 627px) {
 
-/* @media screen and (max-width: 627px) {
-
+  .header__date-location {
+    margin-left: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 } */

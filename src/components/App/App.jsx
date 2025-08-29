@@ -1,5 +1,5 @@
-import { coordinates, APIkey } from "../../utils/constants";
-import { useEffect, useState } from "react";
+import { coordinates, apiKey } from "../../utils/constants";
+import { useCallback, useEffect, useState } from "react";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import * as auth from "../../utils/auth";
@@ -76,9 +76,9 @@ function App() {
     setActiveModal("edit-profile");
   };
 
-  const closeActiveModal = () => {
+  const closeActiveModal = useCallback(() => {
     setActiveModal("");
-  };
+  }, []);
 
   // switch handlers
   const switchToRegister = () => {
@@ -125,27 +125,30 @@ function App() {
       .catch((err) => console.error("Failed to update profile", err));
   };
 
-  const handleLogout = () => {
+  const handleLogout = useCallback(() => {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     setCurrentUser(null);
     navigate("/");
-  };
+  }, [navigate]);
 
-  const checkTokenAndSetUser = (token) => {
-    auth
-      .checkToken(token)
-      .then((userData) => {
-        setIsLoggedIn(true);
-        setCurrentUser(userData);
-        closeActiveModal();
-        navigate("/profile");
-      })
-      .catch((err) => {
-        console.error("Token validation failed:", err);
-        handleLogout();
-      });
-  };
+  const checkTokenAndSetUser = useCallback(
+    (token) => {
+      auth
+        .checkToken(token)
+        .then((userData) => {
+          setIsLoggedIn(true);
+          setCurrentUser(userData);
+          closeActiveModal();
+          navigate("/");
+        })
+        .catch((err) => {
+          console.error("Token validation failed:", err);
+          handleLogout();
+        });
+    },
+    [closeActiveModal, navigate, handleLogout]
+  );
 
   const handleCardLike = ({ id, isLiked }) => {
     const token = getToken();
@@ -166,14 +169,14 @@ function App() {
     if (token) {
       checkTokenAndSetUser(token);
     }
-  }, []);
+  }, [checkTokenAndSetUser]);
 
   // Item handlers
   const handleAddItemModalSubmit = ({ name, imageUrl, weather }) => {
     const token = localStorage.getItem("jwt");
     addItem({ name, imageUrl, weather }, token) // pass token to API call
       .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
+        setClothingItems((prev) => [newItem, ...prev]);
         closeActiveModal();
       })
       .catch((err) => console.error("Failed to add item:", err));
@@ -202,7 +205,7 @@ function App() {
 
   // Data fetching
   useEffect(() => {
-    getWeather(coordinates, APIkey)
+    getWeather(coordinates, apiKey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);

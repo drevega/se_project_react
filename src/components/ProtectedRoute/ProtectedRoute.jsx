@@ -1,5 +1,3 @@
-// import React from "react"; needed?
-
 // act as guard for protected routes - if not logged in, redirect to home page
 import { Navigate } from "react-router-dom";
 

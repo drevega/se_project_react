@@ -31,13 +31,14 @@ export default function RegisterModal({
       onSubmit={handleSubmit}
       isButtonDisabled={!isValid}
     >
+      {errorMessage && <span className="modal__error">{errorMessage}</span>}
       <label htmlFor="email" className="modal__label">
         Email*
         <input
           type="email"
           name="email"
           className="modal__input"
-          id="email"
+          id="register-email"
           placeholder="Email"
           required
           value={values.email || ""}
@@ -51,7 +52,7 @@ export default function RegisterModal({
           type="password"
           name="password"
           className="modal__input"
-          id="password"
+          id="register-password"
           placeholder="Password"
           required
           minLength="8"
@@ -68,7 +69,7 @@ export default function RegisterModal({
           type="text"
           name="name"
           className="modal__input"
-          id="name"
+          id="register-name"
           placeholder="Name"
           required
           minLength="1"
@@ -84,7 +85,7 @@ export default function RegisterModal({
           type="url"
           name="avatar"
           className="modal__input"
-          id="avatar"
+          id="register-avatar"
           placeholder="Avatar URL"
           required
           value={values.avatar || ""}
