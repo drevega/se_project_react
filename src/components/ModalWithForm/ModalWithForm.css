@@ -119,6 +119,12 @@
   cursor: pointer;
 }
 
+.modal__button-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .modal__submit {
   background-color: #000;
   color: #fff;
@@ -143,17 +149,6 @@
   background-color: #0000004d;
   opacity: 30%;
   pointer-events: none;
-}
-
-.modal__submit,
-.modal__switch-btn {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
-}
-
-.modal__submit + .modal__switch-btn {
-  margin-left: 12px;
 }
 
 .modal__error {

@@ -140,7 +140,6 @@ function App() {
           setIsLoggedIn(true);
           setCurrentUser(userData);
           closeActiveModal();
-          navigate("/");
         })
         .catch((err) => {
           console.error("Token validation failed:", err);

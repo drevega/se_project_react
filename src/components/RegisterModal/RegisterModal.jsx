@@ -30,15 +30,19 @@ export default function RegisterModal({
       onClose={onClose}
       onSubmit={handleSubmit}
       isButtonDisabled={!isValid}
+      switchButton={
+        <button type="button" className="modal__switch-btn" onClick={onSwitch}>
+          or Log In
+        </button>
+      }
     >
       {errorMessage && <span className="modal__error">{errorMessage}</span>}
-      <label htmlFor="email" className="modal__label">
+      <label className="modal__label">
         Email*
         <input
           type="email"
           name="email"
           className="modal__input"
-          id="register-email"
           placeholder="Email"
           required
           value={values.email || ""}
@@ -46,13 +50,12 @@ export default function RegisterModal({
         />
         {errors.email && <span className="modal__error">{errors.email}</span>}
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label className="modal__label">
         Password*
         <input
           type="password"
           name="password"
           className="modal__input"
-          id="register-password"
           placeholder="Password"
           required
           minLength="8"
@@ -63,13 +66,12 @@ export default function RegisterModal({
           <span className="modal__error">{errors.password}</span>
         )}
       </label>
-      <label htmlFor="name" className="modal__label">
+      <label className="modal__label">
         Name*
         <input
           type="text"
           name="name"
           className="modal__input"
-          id="register-name"
           placeholder="Name"
           required
           minLength="1"
@@ -79,13 +81,12 @@ export default function RegisterModal({
         />
         {errors.name && <span className="modal__error">{errors.name}</span>}
       </label>
-      <label htmlFor="avatar" className="modal__label">
+      <label className="modal__label">
         Avatar URL*
         <input
           type="url"
           name="avatar"
           className="modal__input"
-          id="register-avatar"
           placeholder="Avatar URL"
           required
           value={values.avatar || ""}
@@ -93,10 +94,6 @@ export default function RegisterModal({
         />
         {errors.avatar && <span className="modal__error">{errors.avatar}</span>}
       </label>
-      {/* switch to login */}
-      <button type="button" className="modal__switch-btn" onClick={onSwitch}>
-        or Log In
-      </button>
     </ModalWithForm>
   );
 }

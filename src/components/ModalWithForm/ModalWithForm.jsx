@@ -10,6 +10,7 @@ function ModalWithForm({
   onClose,
   onSubmit,
   isButtonDisabled,
+  switchButton,
 }) {
   useEffect(() => {
     const handleEsc = (e) => e.key === "Escape" && onClose();
@@ -28,14 +29,19 @@ function ModalWithForm({
           <img src={close} alt="close icon" />
         </button>
         <form onSubmit={onSubmit} className="modal__form">
+          {/* This will now ONLY render the form fields */}
           {children}
-          <button
-            type="submit"
-            className="modal__submit"
-            disabled={isButtonDisabled}
-          >
-            {buttonText}
-          </button>
+          {/* Both buttons now live inside this container */}
+          <div className="modal__button-container">
+            <button
+              type="submit"
+              className="modal__submit"
+              disabled={isButtonDisabled}
+            >
+              {buttonText}
+            </button>
+            {switchButton}
+          </div>
         </form>
       </div>
     </div>

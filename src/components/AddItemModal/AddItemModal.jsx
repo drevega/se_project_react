@@ -29,13 +29,12 @@ export default function AddItemModal({
       onSubmit={handleSubmit}
       isButtonDisabled={!isValid}
     >
-      <label htmlFor="name" className="modal__label">
+      <label className="modal__label">
         Name
         <input
           type="text"
           name="name"
           className="modal__input"
-          id="name"
           minLength="1"
           maxLength="30"
           placeholder="Name"
@@ -45,13 +44,12 @@ export default function AddItemModal({
         />
         {errors.name && <span className="modal__error">{errors.name}</span>}
       </label>
-      <label htmlFor="imageUrl" className="modal__label">
+      <label className="modal__label">
         Image
         <input
           type="url"
           name="imageUrl"
           className="modal__input"
-          id="imageUrl"
           placeholder="Image URL"
           required
           value={values.imageUrl || ""}

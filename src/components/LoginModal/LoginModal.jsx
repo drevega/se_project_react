@@ -2,7 +2,13 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
 
-export default function LoginModal({ onClose, isOpen, onLogin, onSwitch, errorMessage }) {
+export default function LoginModal({
+  onClose,
+  isOpen,
+  onLogin,
+  onSwitch,
+  errorMessage,
+}) {
   const { values, handleChange, errors, isValid, resetForm } = useForm();
 
   useEffect(() => {
@@ -24,13 +30,17 @@ export default function LoginModal({ onClose, isOpen, onLogin, onSwitch, errorMe
       onClose={onClose}
       onSubmit={handleSubmit}
       isButtonDisabled={!isValid}
+      switchButton={
+        <button type="button" className="modal__switch-btn" onClick={onSwitch}>
+          or Sign Up
+        </button>
+      }
     >
-      <label htmlFor="login-email" className="modal__label">
+      <label className="modal__label">
         Email
         <input
           type="email"
           className="modal__input"
-          id="login-email"
           name="email"
           placeholder="Email"
           required
@@ -39,12 +49,11 @@ export default function LoginModal({ onClose, isOpen, onLogin, onSwitch, errorMe
         />
         {errors.email && <span className="modal__error">{errors.email}</span>}
       </label>
-      <label htmlFor="login-password" className="modal__label">
+      <label className="modal__label">
         Password
         <input
           type="password"
           className="modal__input"
-          id="login-password"
           name="password"
           placeholder="Password"
           required
@@ -57,10 +66,6 @@ export default function LoginModal({ onClose, isOpen, onLogin, onSwitch, errorMe
         )}
       </label>
       {errorMessage && <span className="modal__error">{errorMessage}</span>}
-      {/* switch to register btn */}
-      <button type="button" className="modal__switch-btn" onClick={onSwitch}>
-        or Sign Up
-      </button>
     </ModalWithForm>
   );
 }
