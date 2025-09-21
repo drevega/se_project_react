@@ -1,6 +1,5 @@
 // handle all authentication-related functions
-
-const baseUrl = "http://localhost:3001";
+import { baseUrl } from "../utils/constants.js";
 
 function checkResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);

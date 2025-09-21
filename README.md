@@ -1,4 +1,4 @@
-# Welcome to my "WTWR" app 📱
+# Welcome to my "WTWR" app: Front-End📱
 
 
 **About the project**
@@ -27,11 +27,12 @@ Formatted using Prettier.
 
 - [Back-End Repo Link](https://github.com/drevega/se_project_express.git)
 - [Figma Design](https://www.figma.com/design/bfVOvqlLmoKZ5lpro8WWBe/Sprint-14_-WTWR?t=WE8bZuyXqKUMPOK0-0)
-<!-- - [Demo]() -->
+- [Demo](https://drive.google.com/file/d/1qAQi-EoL50Bo6HMoFkITE5bu-HvvlbZw/view?usp=sharing)
+
 
 
 **Responsive design in process.. (will upload once ready)** 
 
 
-_Thank you for viewing!_ -Andrea
+_Thank you for viewing!_ -Andrea 🌻
 

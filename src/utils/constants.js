@@ -1,3 +1,5 @@
+// constants for the React app - weather conditions, API base URL, default coordinates, and API key
+
 export const weatherOptions = [
   {
     day: true,
@@ -62,6 +64,10 @@ export const weatherOptions = [
     url: new URL("../assets/night/fognight.png", import.meta.url).href,
   },
 ];
+
+export const baseUrl = process.env.NODE_ENV === "production" 
+  ? "https://api.drewtwr.jumpingcrab.com"
+  : "http://localhost:3001";
 
 export const defaultWeatherOptions = {
   day: {
